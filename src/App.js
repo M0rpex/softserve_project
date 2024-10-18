@@ -1,14 +1,21 @@
 import { Routes, Route } from "react-router-dom";
-import './pages/styles/styles.css';
-import SignIn from "./pages/SignIn";
+import "./pages/styles/styles.css";
+// import SignIn from "./pages/SignIn";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <main className="App">
+    <>
+      <Header />
       <Routes>
-        <Route path='/' element={<SignIn />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
-    </main>
+    </>
   );
 }
 

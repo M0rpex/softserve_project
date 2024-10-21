@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 function HomeHero() {
   const access = localStorage.getItem("access");
+
   return (
     <section>
       <div className="padding-global">

@@ -2,7 +2,6 @@
     "devices": {
       "kitchen": [
         { "icon": "faSnowflake", "name": "Air Conditioner" },
-        { "icon": "faTv", "name": "Smart TV" },
         { "icon": "faMugHot", "name": "Coffee Machine" },
         { "icon": "faLightbulb", "name": "Light" }
       ],
@@ -19,10 +18,10 @@
       ]
     },
     "rooms": [
-      { "icon": "faKitchenSet", "title": "Kitchen", "devices": 4, "link": "kitchen" },
+      { "icon": "faKitchenSet", "title": "Kitchen", "devices": 3, "link": "kitchen" },
       { "icon": "faCouch", "title": "Living Room", "devices": 3, "link": "living" },
       { "icon": "faBed", "title": "Bedroom", "devices": 4, "link": "bedroom" },
-      { "icon": "faBath", "title": "Bathroom", "devices": 2, "link": "bathroom" }
+      { "icon": "faBath", "title": "Bathroom", "devices": 0, "link": "bathroom" }
     ]
   }
   

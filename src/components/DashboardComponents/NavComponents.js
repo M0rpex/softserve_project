@@ -9,9 +9,15 @@ import {
   faListUl,
   faChartColumn,
 } from "@fortawesome/free-solid-svg-icons";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function NavComponents() {
-//   const userInfo = JSON.parse(localStorage.getItem("user"));
+
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    navigate('/');
+    localStorage.removeItem('access');
+  }
 
   return (
     <div className="navbar-components">
@@ -22,20 +28,40 @@ function NavComponents() {
         <div className="navbar-menu-title">Menu</div>
         <ul>
           <li>
-            <FontAwesomeIcon icon={faHouse} />
-            <span>Home</span>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <FontAwesomeIcon icon={faHouse} />
+              <span>Home</span>
+            </NavLink>
           </li>
           <li>
-            <FontAwesomeIcon icon={faChartColumn} />
-            <span>Insights</span>
+            <NavLink
+              to="/insights"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <FontAwesomeIcon icon={faChartColumn} />
+              <span>Insights</span>
+            </NavLink>
           </li>
           <li>
-            <FontAwesomeIcon icon={faListUl} />
-            <span>Recommends</span>
+            <NavLink
+              to="/recommends"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <FontAwesomeIcon icon={faListUl} />
+              <span>Recommends</span>
+            </NavLink>
           </li>
           <li>
-            <FontAwesomeIcon icon={faEnvelope} />
-            <span>Messages</span>
+            <NavLink
+              to="/messages"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <FontAwesomeIcon icon={faEnvelope} />
+              <span>Messages</span>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -43,18 +69,33 @@ function NavComponents() {
         <div className="navbar-menu-title">Settings</div>
         <ul>
           <li>
-            <FontAwesomeIcon icon={faUser} />
-            <span>Profile</span>
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <FontAwesomeIcon icon={faUser} />
+              <span>Profile</span>
+            </NavLink>
           </li>
           <li>
-            <FontAwesomeIcon icon={faInfo} />
-            <span>FAQ's</span>
+            <NavLink
+              to="/faq"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <FontAwesomeIcon icon={faInfo} />
+              <span>FAQ's</span>
+            </NavLink>
           </li>
           <li>
-            <FontAwesomeIcon icon={faPhoneVolume} />
-            <span>Contact us</span>
+            <NavLink
+              to="/contact-us"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              <FontAwesomeIcon icon={faPhoneVolume} />
+              <span>Contact us</span>
+            </NavLink>
           </li>
-          <li>
+          <li onClick={handleLogOut}>
             <FontAwesomeIcon icon={faRightFromBracket} />
             <span>Logout</span>
           </li>
